@@ -445,7 +445,7 @@ void controller::process_inputdata() {
       m_log.info("Executing shell command: %s", cmd);
       m_command = command_util::make_command(move(cmd));
       m_command->exec();
-      m_command.reset();
+      //m_command.reset();
       process_update(true);
     } catch (const application_error& err) {
       m_log.err("controller: Error while forwarding input to shell -> %s", err.what());
